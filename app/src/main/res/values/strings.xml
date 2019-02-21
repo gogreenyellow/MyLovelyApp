@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MyLovelyApp</string>
+    <string name="check_parity">Check parity</string>
+    <string name="check_natural">Check if natural</string>
+    <string name="input_is_even">The number %d is even</string>
+    <string name="input_is_odd">The number %d is odd</string>
+    <string name="input_is_natural">The number %d is natural.</string>
+    <string name="input_is_not_natural">The number %d is not natural.</string>
+</resources>
