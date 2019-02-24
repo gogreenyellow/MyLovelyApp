@@ -30,21 +30,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void handleParityClick(View v) {
-        int result = getInputNumber();
+        int input = getInputNumber();
 
-        if (result % 2 == 0) {
-            resultTextView.setText(getString(R.string.input_is_even, result));
+        if (input % 2 == 0) {
+            resultTextView.setText(getString(R.string.input_is_even, input));
         } else {
-            resultTextView.setText(getString(R.string.input_is_odd, result));
+            resultTextView.setText(getString(R.string.input_is_odd, input));
         }
     }
 
     public void handleNaturalClick() {
-        int result = getInputNumber();
-        if (result >= 0) {
-            resultTextView.setText(getString(R.string.input_is_natural));
+        int input = getInputNumber();
+        if (input >= 0) {
+            resultTextView.setText(getString(R.string.input_is_natural, input));
         } else {
-            resultTextView.setText(getString(R.string.input_is_not_natural));
+            resultTextView.setText(getString(R.string.input_is_not_natural, input));
         }
     }
 
