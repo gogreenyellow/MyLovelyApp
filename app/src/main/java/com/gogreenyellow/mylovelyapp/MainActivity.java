@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,27 +31,38 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void handleParityClick(View v) {
-        int result = getInputNumber();
-
-        if (result % 2 == 0) {
-            resultTextView.setText(getString(R.string.input_is_even, result));
-        } else {
-            resultTextView.setText(getString(R.string.input_is_odd, result));
+        try {
+            int input = getInputNumber();
+            if (input % 2 == 0) {
+                resultTextView.setText(getString(R.string.input_is_even, input));
+            } else {
+                resultTextView.setText(getString(R.string.input_is_odd, input));
+            }
+        } catch (NumberFormatException e) {
+            displayErrorMessage();
         }
     }
 
     public void handleNaturalClick() {
-        int result = getInputNumber();
-        if (result >= 0) {
-            resultTextView.setText(getString(R.string.input_is_natural));
-        } else {
-            resultTextView.setText(getString(R.string.input_is_not_natural));
+        try {
+            int input = getInputNumber();
+            if (input >= 0) {
+                resultTextView.setText(getString(R.string.input_is_natural, input));
+            } else {
+                resultTextView.setText(getString(R.string.input_is_not_natural, input));
+            }
+        } catch (NumberFormatException e) {
+            displayErrorMessage();
         }
     }
 
     private int getInputNumber() {
         String inputString = inputEditText.getText().toString();
         return Integer.parseInt(inputString);
+    }
+
+    private void displayErrorMessage(){
+        Toast.makeText(this, R.string.input_error, Toast.LENGTH_SHORT).show();
     }
 
 }

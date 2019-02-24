@@ -6,4 +6,5 @@
     <string name="input_is_odd">The number %d is odd</string>
     <string name="input_is_natural">The number %d is natural.</string>
     <string name="input_is_not_natural">The number %d is not natural.</string>
+    <string name="input_error">Enter a valid Integer.</string>
 </resources>
